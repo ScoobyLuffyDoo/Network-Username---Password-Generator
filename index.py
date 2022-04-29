@@ -1,16 +1,13 @@
 from fastapi import FastAPI
+import UsernamePassword as UP
+
 
 app = FastAPI()
 
-@app.get('/')
-def root():
-    return{'result': "password Generator"}
+# Root Path
+@app.get('/password/{passwordLength}')
+def root(passwordLength: int):
+    return(UP.Generator.get_password(passwordLength))
 
 
-
-
-if __name__ =="__main__":
-     main()    
-
-
-#running the app uvicorn main:app --reload
+#running the app uvicorn index:app --reload
