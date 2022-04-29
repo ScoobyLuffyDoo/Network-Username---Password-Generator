@@ -9,9 +9,9 @@ special_character='!@#$%^&*()_+=|?<>/'
 all_characters = random.shuffle(f'{character_set}{upper_character_set }{numbers_set}{special_character}')
 class Generator():
     @staticmethod
-    def get_password(lenth):
-        
-        tempset= random.sample(all_characters,lenth)
+    def get_password(length):
+        # get new length
+        tempset= random.sample(all_characters,length)
         password= "".join(tempset)
         return(password)
     
